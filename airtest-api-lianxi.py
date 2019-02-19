@@ -13,9 +13,12 @@ for i in range(len(shebei)):
         if shebei[i].find('\tdevice') != -1:
             temp = shebei[i].split('\t')
             DEV = temp[0]
-            
+"""连接设备"""
+connect_device("Android://127.0.0.1:5037/%s"%shebei()[0])  
+
 """卸载app"""            
 uninstall('org.cocos2d.test102_test')
+
 """安装app"""
 install('D:\\app\\ceshi\\19995_Android.apk')
 """
@@ -34,6 +37,10 @@ for i in list:
     if i.startswith("org.cocos2d"):
         result.append(i)
 print(result)
+
+"""启动和关闭app"""
+start_app('org.cocos2d.test102_test')   #启动
+stop_app('org.cocos2d.test102_test')   #关闭
 
 """获得手机里面某个apk的应用信息、版本信息"""
 os.popen(adb shell dumpsys package app)  #app是包名
