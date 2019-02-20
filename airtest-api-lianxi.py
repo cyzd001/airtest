@@ -46,7 +46,11 @@ stop_app('org.cocos2d.test102_test')   #关闭
 os.popen(adb shell dumpsys package app)  #app是包名
 os.popen(adb shell dumpsys)  #是列出手机上所以包名
 
-
 """adb启动apk"""
 os.popen(adb shell am start -n breakan.test/breakan.test.TestActivity)
+
+"""adb启动和关闭设备"""
+os.popen('adb reboot')  #重启
+os.popen('adb shell reboot -p')  #关闭
+os.popen('adb shutdown')  #关闭
 
